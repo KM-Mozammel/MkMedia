@@ -7,7 +7,7 @@ class AudioController extends Controller{
         $dbc = $dbh->getConnection();
 
         $PageObj = new Audio($dbc);
-        $PageObj->findById(1);
+        $PageObj->findById();
         $variable['pageObj'] = $PageObj;
 
         $template = new Template();

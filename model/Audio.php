@@ -15,13 +15,13 @@ class Audio{
         $this->dbc = $dbc;
     }
 
-    public function findById($id){
+    public function findById(){
         
         $sql = "SELECT * FROM audio";
         $stmt = $this->dbc->prepare($sql);
         $stmt->execute();
         $PageData = $stmt->fetchAll();
-        
+
         $this->data = $PageData;
 
     }
