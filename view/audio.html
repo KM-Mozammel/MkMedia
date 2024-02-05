@@ -1,0 +1,27 @@
+<div id="audio-list">
+  <h1>Audio List</h1>
+  <ul>
+    <!-- Sample audio list items (replace with data from your database) -->
+    <?php
+        foreach($variables as $key=>$value){
+            var_dump($key);
+        }
+    ?>
+    <li>
+      <audio controls>
+        <source src="<?php  ?>" type="audio/mp3" />
+        Your browser does not support the audio element.
+      </audio>
+      <div class="audio-info"><?php  ?></div>
+    </li>
+
+    <li>
+      <audio controls>
+        <source src="audio/sample2.mp3" type="audio/mp3" />
+        Your browser does not support the audio element.
+      </audio>
+      <div class="audio-info">Song Name</div>
+    </li>
+    <!-- Add more items dynamically based on your database -->
+  </ul>
+</div>
