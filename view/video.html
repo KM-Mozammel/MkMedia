@@ -54,22 +54,20 @@
     <div id="video-list">
         <h1>Video List</h1>
         <ul>
-            <!-- Sample video list items (replace with data from your database) -->
+            <?php 
+                foreach($variable['pageObj'] as $data){
+            ?>
+
             <li>
                 <video controls>
-                    <source src="<?php echo $pageObj->location; ?>" type="video/mp4">
+                    <source src="<?php echo $data['location']; ?>" type="video/mp4">
                     Your browser does not support the video element.
                 </video>
-                <div class="video-info"><?php echo $pageObj->name; ?></div>
+                <div class="video-info"><?php echo $data['name']; ?></div>
             </li>
-            <li>
-                <video controls>
-                    <source src="video/sample2.mp4" type="video/mp4">
-                    Your browser does not support the video element.
-                </video>
-                <div class="video-info">Duration: 2:58</div>
-            </li>
-            <!-- Add more items dynamically based on your database -->
+            <?php 
+                }
+            ?>
         </ul>
     </div>
 </body>

@@ -1,25 +1,28 @@
-<table border="1">
-    <th>
-        <td>Name</td>
-        <td>Source</td>
-        <td>Size</td>
-    </th>
-<?php
-    foreach ($variables as $variables) {
-
-?>
+<h3 align="center">Song List</h3>
+<p align="center">All the availabe audio song you will found here.</p>
+<table style="background-color: rgba(42, 7, 59, 0.363); color: rgb(0, 0, 0); text-align: center; width: 100%;">
     <tr>
-        <td></td>
-        <td class="audio-info"><?php echo $variables['name']; ?></td>
+        <th>Name</th>
+        <th>Source</th>
+        <th>Size</th>
+    </tr>
+<?php
+
+foreach($variable['pageObj'] as $data){
+?>
+    <tr style="padding: 10px;">
+        <td class="audio-info" style="padding: 10px;"><?php echo $data['name']; ?></td>
         <td>
             <audio 
-            controls 
-            src="<?php echo $variables['location']; ?>" 
+            controls
+            src="<?php echo $data['location']; ?>"
             type="mp3/audio"></audio>
         </td>
         <td><?php echo $data['size']; ?></td>
     </tr>
+
 <?php
-    }
+}
 ?>
 </table>
+

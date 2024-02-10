@@ -13,11 +13,16 @@ class HomePageController extends Controller{
         $dbh = DatabaseConnection::getInstance();
         $dbc = $dbh->getConnection();
 
-        $PageObj = new Pages($dbc);
-        $PageObj->findById(1);
-        $variable['pageObj'] = $PageObj;
+        $PageObj = new HomeData($dbc);
+        $PageObj->getAudio();
+        $PageObj->getVideo();
+        $PageObj->getblog();
+
+        $variable['audio'] = $PageObj->audio;
+        $variable['video'] = $PageObj->video;
+        $variable['blog'] = $PageObj->blog;
 
         $template = new Template();
-        $template->view('static-page', $variable);
+        $template->view('home', $variable);
     }
 }

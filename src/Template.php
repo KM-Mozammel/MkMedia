@@ -2,7 +2,7 @@
 
 class Template{
 
-    function view($template, $variables){
+    public function view($template, $variable){
         include VIEW_PATH . 'layout/default.html';
     }
 }

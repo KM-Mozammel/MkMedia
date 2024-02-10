@@ -7,8 +7,8 @@ class VideoController extends Controller{
         $dbc = $dbh->getConnection();
 
         $PageObj = new Video($dbc);
-        $PageObj->findById(1);
-        $variable['pageObj'] = $PageObj;
+        $PageObj->getVideo();
+        $variable['pageObj'] = $PageObj->data;
 
         $template = new Template();
         $template->view('video', $variable);

@@ -1,21 +1,15 @@
 <?php
 
 class Audio{
-    public $id;
-    public $name;
-    public $location;
-    public $size;
-
-    public $data;
-
     private $dbc;
+    public $data;
 
     public function __construct($dbc)
     {
         $this->dbc = $dbc;
     }
 
-    public function findById(){
+    public function getAudio(){
         
         $sql = "SELECT * FROM audio";
         $stmt = $this->dbc->prepare($sql);
@@ -25,4 +19,5 @@ class Audio{
         $this->data = $PageData;
 
     }
+
 }

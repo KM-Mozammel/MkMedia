@@ -6,9 +6,9 @@ class BlogController extends Controller{
         $dbh = DatabaseConnection::getInstance();
         $dbc = $dbh->getConnection();
 
-        $PageObj = new Pages($dbc);
-        $PageObj->findById(1);
-        $variable['pageObj'] = $PageObj;
+        $PageObj = new Blog($dbc);
+        $PageObj->getBlog();
+        $variable['pageObj'] = $PageObj->data;
 
         $template = new Template();
         $template->view('blog', $variable);

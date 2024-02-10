@@ -54,18 +54,18 @@
     <div id="blog-list">
         <h1>Blog Post List</h1>
         <ul>
-            <!-- Sample blog post list items (replace with data from your database) -->
+            <?php foreach($variable['pageObj'] as $data){
+            
+            ?>
             <li>
-                <h2><?php echo $pageObj->title; ?></h2>
-                <p><?php echo $pageObj->content; ?></p>
-                <div class="post-meta">Posted on January 1, 2024 by John Doe</div>
-            </li>
-            <li>
-                <h2>Sample Blog Post 2</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <h2><?php echo $data['title']; ?></h2>
+                <img style="width: 200px; height: 200px;" src="<?php echo $data['image']; ?>" alt="">
+                <p><?php echo $data['content']; ?></p>
                 <div class="post-meta">Posted on January 2, 2024 by Jane Doe</div>
             </li>
-            <!-- Add more items dynamically based on your database -->
+    <?php
+        }
+    ?>
         </ul>
     </div>
 </body>

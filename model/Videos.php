@@ -1,11 +1,7 @@
 <?php
 
 class Video{
-    public $id;
-    public $name;
-    public $location;
-    public $size;
-
+    public $data;
     private $dbc;
 
     public function __construct($dbc)
@@ -13,17 +9,14 @@ class Video{
         $this->dbc = $dbc;
     }
 
-    public function findById($id){
+    public function getVideo(){
         
-        $sql = "SELECT * FROM videos WHERE id = :id";
+        $sql = "SELECT * FROM videos";
         $stmt = $this->dbc->prepare($sql);
-        $stmt->execute(['id' => $id]);
-        $PageData = $stmt->fetch();
+        $stmt->execute();
+        $PageData = $stmt->fetchAll();
 
-        $this->id = $PageData['id'];
-        $this->name = $PageData['name'];
-        $this->location = $PageData['location'];
-        $this->size = $PageData['size'];
+        $this->data = $PageData;
 
     }
 }
