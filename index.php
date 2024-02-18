@@ -1,4 +1,5 @@
 <?php
+echo "changed";
 session_start();
 
 // Defining the root path of all the files;
